@@ -1,5 +1,9 @@
 {
   "conventionalCommits.scopes": [
     "dev"
+  ],
+  "cSpell.words": [
+    "datasource",
+    "datasources"
   ]
 }

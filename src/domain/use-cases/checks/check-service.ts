@@ -24,7 +24,5 @@ export class CheckService implements CheckServiceUseCase {
       this.errorCallback(`${error}`);
       return false;
     }
-
-    return true;
   }
 }

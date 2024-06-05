@@ -14,23 +14,19 @@ export class Server {
     console.log('Server started...');
 
     // * send email
+    // const emailService = new EmailService();
+    // emailService.sendEmailWithFileSystemLogs([
+    //   envs.MAILER_EMAIL,
+    //   'gerardo1234321@gmail.com',
+    // ]);
 
-    const emailService = new EmailService();
-    emailService.sendEmail({
-      to: envs.MAILER_EMAIL,
-      subject: 'logs del sistema',
-      htmlBody: `
-        <h3>logs del sistema</h3>
-        <p>logs del sistema</p>
-        <a href="google.com">ver logs</a>
-      `,
-    });
-
+    // * envs
     // console.log(envs);
+
+    // * create logs
     // CronService.createJob('*/5 * * * * *', () => {
     //   // const url = 'http://localhost:3000/posts';
     //   const url = 'https://google.com';
-
     //   new CheckService(
     //     fileSystemLogRepository,
     //     () => console.log(`${url} is ok`),

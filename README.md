@@ -11,3 +11,5 @@ MAILER_SECRET_KEY=
 PROD=false
 
 ``` 
+
+3 install the packages dependencies __yarn install__

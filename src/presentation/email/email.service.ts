@@ -1,6 +1,5 @@
 import nodemailer from 'nodemailer';
 import { envs } from '../../config/plugin/envs.plugin';
-import { LogEntity, LogSeverityLevel } from '../../domain/entities/log.entity';
 
 interface SendMailOptions {
   to: string | string[];
@@ -34,23 +33,10 @@ export class EmailService {
         subject,
         html: htmlBody,
         attachments,
-        // from: envs.MAILER_EMAIL,
-      });
-
-      const log = new LogEntity({
-        level: LogSeverityLevel.low,
-        message: 'email send',
-        origin: 'email.service.ts',
       });
 
       return true;
     } catch (error) {
-      const log = new LogEntity({
-        level: LogSeverityLevel.high,
-        message: 'email not send',
-        origin: 'email.service.ts',
-      });
-
       return false;
     }
   }

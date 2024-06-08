@@ -21,9 +21,6 @@ export class Server {
     //   'gerardo1234321@gmail.com',
     // ]);
 
-    // * envs
-    // console.log(envs);
-
     // * create logs
     // CronService.createJob('*/5 * * * * *', () => {
     //   // const url = 'http://localhost:3000/posts';

@@ -4,13 +4,15 @@ import { CheckService } from '../domain/use-cases/checks/check-service';
 import { SendEmailLogs } from '../domain/use-cases/email/send-email-logs';
 import { FileSystemDataSource } from '../infrastructure/datasources/file-system.datasource';
 import { MongoLogDataSource } from '../infrastructure/datasources/mongo-log.datasource';
+import { PostgresLogDataSource } from '../infrastructure/datasources/postgres-log.datasource';
 import { LogRepositoryImpl } from '../infrastructure/repositories/infrastructure';
 import { CronService } from './cron/cron.service';
 import { EmailService } from './email/email.service';
 
 const LogRepository = new LogRepositoryImpl(
-  new FileSystemDataSource()
+  // new FileSystemDataSource()
   // new MongoLogDataSource()
+  new PostgresLogDataSource()
 );
 const emailService = new EmailService();
 
@@ -35,8 +37,7 @@ export class Server {
     //   ).execute(url);
     // });
 
-    const logs = await LogRepository.getLogs(LogSeverityLevel.low)
+    const logs = await LogRepository.getLogs(LogSeverityLevel.high)
     console.log(logs);
-    
   }
 }

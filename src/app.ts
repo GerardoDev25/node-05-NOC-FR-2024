@@ -1,3 +1,4 @@
+import { PrismaClient, SeverityLevel } from '@prisma/client';
 import { envs } from './config/plugin/envs.plugin';
 import { MongoDatabase } from './data/mongo';
 import { Server } from './presentation/server';

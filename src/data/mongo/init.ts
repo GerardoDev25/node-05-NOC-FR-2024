@@ -1,4 +1,4 @@
-import { MongoClient } from 'mongodb';
+import mongoose from 'mongoose';
 interface ConnectionOptions {
   mongoUrl: string;
   dbName: string;
@@ -11,11 +11,12 @@ export class MongoDatabase {
     const { dbName, mongoUrl } = options;
 
     try {
-      const client = await MongoClient.connect(mongoUrl);
-      const db = client.db(dbName);
+      const client = await mongoose.connect(mongoUrl, {
+        dbName,
+      });
 
       console.log('MongoDB connected');
-      return db;
+      return client;
     } catch (error) {
       console.error('Mongo connection error');
       throw error;

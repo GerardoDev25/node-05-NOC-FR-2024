@@ -12,5 +12,5 @@ async function main() {
     mongoUrl: envs.MONGO_URL,
   });
 
-  Server.start();
+  // Server.start();
 }

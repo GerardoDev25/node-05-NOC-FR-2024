@@ -25,7 +25,9 @@ export class LogEntity {
     this.createAt = createAt;
   }
 
-  static fromJson(json: string): LogEntity {
+  static fromJson(json: string = '{}'): LogEntity {
+    json = json === '' ? '{}' : json;
+
     const { message, createAt, level, origin } = JSON.parse(json) as LogEntity;
     const log = new LogEntity({ message, level, origin });
     log.createAt = new Date(createAt);

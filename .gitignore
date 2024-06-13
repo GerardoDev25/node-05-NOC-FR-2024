@@ -9,5 +9,8 @@ logs
 .env.local
 
 
-# mongo db
+# mongo db volume
 /mongo
+
+# postgres db volume
+/postgres

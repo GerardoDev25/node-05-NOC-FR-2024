@@ -1,6 +1,7 @@
 {
   "conventionalCommits.scopes": [
-    "dev"
+    "dev",
+    "test"
   ],
   "cSpell.words": [
     "datasource",

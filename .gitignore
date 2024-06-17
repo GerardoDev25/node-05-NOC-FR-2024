@@ -6,11 +6,14 @@ dist
 logs
 
 .env
+.env.test
 .env.local
 
 
 # mongo db volume
 /mongo
+/mongo-test
 
 # postgres db volume
 /postgres
+/postgres-test

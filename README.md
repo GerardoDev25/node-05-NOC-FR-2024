@@ -18,7 +18,7 @@ PROD=false
 4 if you have issue with permission with the folder mongo-test and postgres-test please run the following commands on linux
 
 ```sh
-sudo chmod -R 755 /postgres-test
-sudo chmod -R 755 /mongo-test
+sudo chmod -R 755 postgres-test
+sudo chmod -R 755 mongo-test
 
 ```

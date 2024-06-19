@@ -11,13 +11,15 @@
     "docker:test": "docker compose -f docker-compose-test.yml --env-file .env.test up -d",
     "docker:down": "COMPOSE_FILE=docker-compose-test.yml docker compose down",
     "test": "npm run docker:test && jest",
-    "test:watch": "npm run docker:test && jest --watch",
-    "test:coverage": "npm run docker:test && jest --coverage"
+    "test:watch": "npm run docker:test && dotenv -e .env.sample -- jest --watch",
+    "test:coverage": "npm run docker:test && jest --coverage",
+    "migrate:test": "npx dotenv -e .env.test -- npx prisma migrate deploy"
   },
   "devDependencies": {
     "@types/jest": "^29.5.12",
     "@types/node": "^20.14.0",
     "@types/nodemailer": "^6.4.15",
+    "dotenv-cli": "^7.4.2",
     "jest": "^29.7.0",
     "prisma": "^5.15.0",
     "rimraf": "^5.0.7",

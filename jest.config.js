@@ -159,9 +159,13 @@ const config = {
   // ],
 
   // An array of regexp pattern strings that are matched against all test paths, matched tests are skipped
-  // testPathIgnorePatterns: [
-  //   "/node_modules/"
-  // ],
+  testPathIgnorePatterns: [
+    path.resolve(__dirname, 'mongo'),
+    path.resolve(__dirname, 'mongo-test'),
+    path.resolve(__dirname, 'postgres'),
+    path.resolve(__dirname, 'postgres-test'),
+    '/node_modules/',
+  ],
 
   // The regexp pattern or array of patterns that Jest uses to detect test files
   // testRegex: [],
@@ -188,8 +192,14 @@ const config = {
   // verbose: undefined,
 
   // An array of regexp patterns that are matched against all source file paths before re-running tests in watch mode
-  // watchPathIgnorePatterns: [],
-
+  watchPathIgnorePatterns: [
+    path.resolve(__dirname, 'mongo'),
+    path.resolve(__dirname, 'mongo-test'),
+    path.resolve(__dirname, 'postgres'),
+    path.resolve(__dirname, 'postgres-test'),
+    '<rootDir>/dist/',
+    '<rootDir>/node_modules/',
+  ],
   // Whether to use watchman for file crawling
   // watchman: true,
 };

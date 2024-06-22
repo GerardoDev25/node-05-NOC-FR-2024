@@ -11,7 +11,7 @@
     "docker:test": "docker compose -f docker-compose-test.yml --env-file .env.test up -d",
     "docker:down": "COMPOSE_FILE=docker-compose-test.yml docker compose down",
     "test": "npm run docker:test && jest",
-    "test:watch": "npm run docker:test && dotenv -e .env.sample -- jest --watch",
+    "test:watch": "npm run docker:test && dotenv -e .env.test -- jest --watch",
     "test:coverage": "npm run docker:test && jest --coverage",
     "migrate:test": "npx dotenv -e .env.test -- npx prisma migrate deploy"
   },
